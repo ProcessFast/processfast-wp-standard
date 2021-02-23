@@ -23,13 +23,13 @@
 define( 'DB_NAME', 'wp-processfast' );
 
 /** MySQL database username */
-define( 'DB_USER', 'wordpressDbUser' );
+define( 'DB_USER', 'root' );
 
 /** MySQL database password */
-define( 'DB_PASSWORD', 'WTffjrp8DUKPJEovmjbtaukch' );
+define( 'DB_PASSWORD', 'password' );
 
 /** MySQL hostname */
-define( 'DB_HOST', 'localhost' );
+define( 'DB_HOST', '127.0.0.1' );
 
 /** Database Charset to use in creating database tables. */
 define( 'DB_CHARSET', 'utf8mb4' );
