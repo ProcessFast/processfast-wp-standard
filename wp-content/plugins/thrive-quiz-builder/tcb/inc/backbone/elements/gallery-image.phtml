@@ -1,0 +1,33 @@
+<div data-id="<#=image.id#>"
+	 data-caption="<#=image.caption ? image.caption : ''#>"
+	 data-position="<#=imageObj.getImagePosition(image)#>"
+	 data-index="<#=index#>" class="thrv_wrapper tve_image_caption tve-draggable tve-droppable <#=captionSettings.position ? captionSettings.position.classes : ''#>"
+	 draggable="true">
+	<span class="tve_image_frame">
+		<img class="tve_image wp-image-<#=image.id#>"
+			 alt="<#=image.alt#>"
+			 data-id="<#=image.id#>"
+			 width="<#=image.width#>"
+			 height="<#=image.height#>"
+			 title="<#=image.title#>"
+			 src="<#=image.sizes[imageObj.getImageSize()] ? image.sizes[imageObj.getImageSize()].url : image.url #>"
+			 data-src="<#=image.sizes[imageObj.getFullwidthSize()] ? image.sizes[imageObj.getFullwidthSize()].url : image.url#>"
+			 loading="lazy"
+			 draggable="false">
+	</span>
+	<# if(imageObj.hasCaptions()){#>
+	<p class="thrv_wrapper wp-caption-text thrv-inline-text tve-froala fr-box fr-basic <#= captionSettings.alignment ? captionSettings.alignment.class : '' #>"
+	<#= captionSettings.position ? captionSettings.position.attr : '' #>
+	<#= captionSettings.alignment ? captionSettings.alignment.attr : '' #>
+	>
+	<#if(links.length && links[index] && links[index].hasLink){#>
+	<a href="<#=links[index].href#>" target="<#=links[index].target#>" rel="<#=links[index].rel#>">
+		<# } #>
+		<#=image.caption ? image.caption : '&nbsp;'#>
+		<#if(links.length && links[index] && links[index].hasLink){#>
+	</a>
+	<# } #>
+	</p>
+	<# } #>
+
+</div>
